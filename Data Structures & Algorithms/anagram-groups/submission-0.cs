@@ -10,7 +10,8 @@ public class Solution {
             
             // Count each character in the current string
             foreach (char currentChar in currentString) {
-                charCounts[currentChar - 'a']++;  // 'a' is 0, 'b' is 1, etc.
+                //use - 'a' to convert char to int for the index (e.g., 'a' -> 0, 'b' -> 1, etc.)
+                charCounts[currentChar - 'a']++; 
             }
             
             // Create a unique key from the counts array (e.g., "1,0,0,...,1" for "eat")
