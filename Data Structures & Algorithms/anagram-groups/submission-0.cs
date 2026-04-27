@@ -1,43 +1,31 @@
 public class Solution {
     public List<List<string>> GroupAnagrams(string[] strs) {
-        // initilise output list
-        List<string> output = new List<string>;
+        // Dictionary to group anagrams: key is a string of char counts, value is list of anagrams
+        Dictionary<string, List<string>> groupsBySignature = new Dictionary<string, List<string>>();
         
-        //create a hashmap of the arrays string
-
-        //for each loop for each string in the array
-
-        //use a int count to check lenth we want to only check each length once
-
-        //initilise string list group to hold this word and anagrams of this word (empty for now)
-
-
-            //second loop for each string in the array
-                //check vs lengthcount
-
-                //check if anagram vs string from first loop (even if same word)
-                    //check if different length return false
-
-                    //create dictionary of chars and counts for the string 
-
-                    //loop through first string chars and add to dictionary 
-
-                        //if contained add one to value
-
-                        //if not add to the dictionary
-
-                    //loop through second string chars 
-                        //if contaied reduce the count
-                            //if under 0 not anagram 
-                        //if not contained not angram
-                    
-                //if we get here add the word to the list(should succeed on same word and anagrams)
-
-        //Increae count
-
-        //add group to output
-
-    //return output
+        // Iterate through each string in the input array
+        foreach (string currentString in strs) {
+            // Array to count occurrences of each lowercase letter (a-z, 26 letters)
+            int[] charCounts = new int[26];
+            
+            // Count each character in the current string
+            foreach (char currentChar in currentString) {
+                charCounts[currentChar - 'a']++;  // 'a' is 0, 'b' is 1, etc.
+            }
+            
+            // Create a unique key from the counts array (e.g., "1,0,0,...,1" for "eat")
+            string countKey = string.Join(",", charCounts);
+            
+            // If this key doesn't exist, create a new list for it
+            if (!groupsBySignature.ContainsKey(countKey)) {
+                groupsBySignature[countKey] = new List<string>();
+            }
+            
+            // Add the current string to the group for this key
+            groupsBySignature[countKey].Add(currentString);
+        }
         
+        // Return all the grouped lists (the values of the dictionary)
+        return new List<List<string>>(groupsBySignature.Values);
     }
 }
