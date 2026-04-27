@@ -29,6 +29,7 @@ public class Solution {
                 {
                     //reduce the value
                     uniqueChars[c]--;
+                    //if the value is less than 0 return false this means the counts dont match and we already knoe=wn the lengths are the same so we know they are not anagrams
                     if (uniqueChars[c] < 0)
                     {
                         return false;
