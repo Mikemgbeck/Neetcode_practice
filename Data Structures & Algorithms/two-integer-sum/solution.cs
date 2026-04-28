@@ -15,7 +15,7 @@ public class Solution
                 //return the int of the compiment and the current index
                 return [map[complement], i];
             }
-            //store the visited numbers and thier index
+            //store the visited numbers and thier index so we can look at them the next loop through the array to see if they are the compliment.
             map[nums[i]] = i;
         }
         return new int[0]; // Return an empty array if no solution is found
