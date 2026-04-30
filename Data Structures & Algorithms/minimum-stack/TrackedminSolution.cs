@@ -1,5 +1,6 @@
 public class MinStack {
     private Stack<long> stack;
+    // Use a long variable to store the minimum value to handle cases where the minimum value is less than Integer.MIN_VALUE
     private long min;
 
 
