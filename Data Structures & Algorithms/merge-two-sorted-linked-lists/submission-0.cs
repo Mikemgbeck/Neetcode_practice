@@ -14,7 +14,7 @@ public class Solution
 {
     public ListNode MergeTwoLists(ListNode list1, ListNode list2) 
     {
-        ListNode dummy = new listNode(0);
+        ListNode dummy = new ListNode(0);
         ListNode node = dummy;
         //make sure we havent reached the end of either
         while (list1 != null && list2 != null)
@@ -36,7 +36,7 @@ public class Solution
             node = node.next;
         }
         //we came out of the loop so list one or 2 hit null
-        if (list1 !null)
+        if (list1 != null)
         {
             //attach any remaining nodes to our new list
             node.next = list1;
