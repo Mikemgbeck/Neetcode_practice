@@ -21,22 +21,26 @@
 
 ## Repository structure
 
-Solutions are organized by topic folder, then problem ID. Each submission is stored as a separate file:
+Solutions live in `problems/`, grouped by week. Flashcards live in `flashcards/<week>/deck.txt`. See [`flashcards/TRACKER.md`](flashcards/TRACKER.md) for the week→problem→code index.
 
 ```
-<topic-folder>/
-  <problem-id>/
-    submission-0.<ext>   ← first submission
-    submission-1.<ext>   ← second submission
-    ...
+problems/
+  week-one/
+    <problem-id>/
+      submission-0.<ext>   ← first submission
+      submission-1.<ext>   ← second submission
+      ...
+  week-two/
+    <problem-id>/
+      ...
+
+flashcards/
+  TRACKER.md               ← week → problem → code links
+  week-one/deck.txt        ← Anki deck for week 1
+  week-two/deck.txt
 ```
 
-**Example:**
-```
-Data Structures & Algorithms/two-integer-sum/submission-0.py
-Data Structures & Algorithms/binary-search/submission-0.ts
-Python For Beginners/python-hello-world/submission-0.py
-```
+**Note:** NeetCode's GitHub Sync writes new submissions to `Data Structures & Algorithms/<problem-id>/` at the repo root. After each sync, move new problem folders into the current week under `problems/week-N/` and add a row to `flashcards/TRACKER.md`.
 
 ---
 
